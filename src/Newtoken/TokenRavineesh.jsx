@@ -1,6 +1,7 @@
 //This Is Tokkenpoonam.jsx Replace this code
+
 import React, { useEffect, useState } from 'react'
-function TokenPoonam() {
+function TokenRavineesh() {
 const[accesstoken,setAccesstoken]=useState('')
 const handlelogin =()=>{
 // console.log("handle login clicked")
@@ -74,26 +75,4 @@ return (
 </>
 )
 }
-export default TokenPoonam
-// This Is Main.jsx
-// import { Route, Routes } from "react-router-dom";
-// import Container from "./Container";
-// import Header from "./Header";
-// import Leftside from "./Leftside";
-// import Mail from "./Mail";
-// import Starred from "./Starred";
-// import TokenPoonam from "../Routerpractice/TokenPoonam";
-// function Main (){
-// return (
-// <div class="body-wrapper">
-// <Leftside/>
-// <Header/>
-// {/* <Mail/> */}
-// <Routes><Route path="/" element={<TokenPoonam/>}></Route>
-// <Route path="/starred" element={<Starred/>}></Route>
-// </Routes>
-// <Container/>
-// </div>
-// )
-// };
-// export default Main;
+export default TokenRavineesh
