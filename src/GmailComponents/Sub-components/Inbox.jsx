@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Inbox = () => {
+function Inbox  ()  {
     return(
 <>
 <section class="inbox" >

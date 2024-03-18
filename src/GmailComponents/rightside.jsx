@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Rightside = () => {
+function Rightside() {
   return (
     <section className="app-container">
 

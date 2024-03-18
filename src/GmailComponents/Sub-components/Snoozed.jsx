@@ -1,4 +1,4 @@
-const Snoozed = () => {
+function Snoozed() {
     return(
 <>
 <section class="inbox" >

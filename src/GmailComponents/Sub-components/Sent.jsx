@@ -1,5 +1,5 @@
 
-const Sent = () => {
+function Sent(){
     return(
 <>
 <section class="inbox" >

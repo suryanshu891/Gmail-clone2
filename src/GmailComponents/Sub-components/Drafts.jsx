@@ -1,4 +1,4 @@
-const Drafts = () => {
+function Drafts  ()  {
     return(
 <>
 <section class="inbox" >

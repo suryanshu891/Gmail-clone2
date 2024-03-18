@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-const Leftside = () => {
+function Leftside() {
   return (
     <>
       <section class="left-sidebar">

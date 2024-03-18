@@ -1,4 +1,4 @@
-const Body = () => {
+function Body () {
     return(
 <>
 <section class="inbox" >

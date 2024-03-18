@@ -1,4 +1,4 @@
-const Starred = () => {
+function Starred(){
     return(
 <>
 <section class="inbox" >
