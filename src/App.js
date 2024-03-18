@@ -2,15 +2,15 @@
 
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
-import Header from './Components/header';
-import Leftside from './Components/leftside';
-import Footer from './Components/Footer';
-import Rightside from './Components/rightside';
-import Starred from './Components/Sub-components/Starred';
-import Snoozed from './Components/Sub-components/Snoozed';
-import Sent from './Components/Sub-components/Sent';
-import Drafts from './Components/Sub-components/Drafts';
-import Inbox from './Components/Sub-components/Inbox';
+import Header from './GmailComponents/header';
+import Leftside from './GmailComponents/leftside';
+import Footer from './GmailComponents/Footer';
+import Rightside from './GmailComponents/rightside';
+import Starred from './GmailComponents/Sub-components/Starred';
+import Snoozed from './GmailComponents/Sub-components/Snoozed';
+import Sent from './GmailComponents/Sub-components/Sent';
+import Drafts from './GmailComponents/Sub-components/Drafts';
+import Inbox from './GmailComponents/Sub-components/Inbox';
 
 
 

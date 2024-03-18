@@ -4,7 +4,7 @@ function Accesstoken() {
   const [accessToken, setAccessToken] = useState('');
 
   const handleLogin = () => {
-    const CLIENT_ID = '877931587159-k4ear7tim3tfm4fgqjnpa27mc5iq8k8m.apps.googleusercontent.com';
+    const CLIENT_ID = '105564751172-mub8ci4e60d0dtmai5u48ss2gr39c9oc.apps.googleusercontent.com';
     const REDIRECT_URI = "http://localhost:3000";
     const SCOPE = "https://www.googleapis.com/auth/gmail.readonly";
     const AUTH_URL = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=${SCOPE}&response_type=token`;
