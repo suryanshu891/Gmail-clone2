@@ -19,7 +19,7 @@ window.location.href=AUTH_URL
 const getAccessToken = () => {
 const url = window.location.href;
 const token = url.match(/access_token=([^&]+)/);
-localStorage.setItem("Token", token[1]);
+localStorage.setItem("Token",token && token[1]);
 }
 useEffect(() => {
 getAccessToken()
@@ -41,6 +41,7 @@ fetch(url,options)
 .catch(error=>console.log('Error in fetching mails',error))
 }
 const fetchMail=(id)=>{
+    console.log("message id is==",id)
 // let id="18e28f8a1ea93a27";
 let token=localStorage.getItem("Token")
 const options={
@@ -67,7 +68,7 @@ return (
 <>
 <button onClick={handlelogin}>Login with google</button>
 <button onClick={()=>getEmailData()}>get Email</button>
-<button onClick={()=>fetchMail()}>Fetch Emails</button>
+<button onClick={()=>fetchMail("18e55981dcc9c87f")}>Fetch Emails</button>
 </>
 )
 }
@@ -76,3 +77,4 @@ return (
 )
 }
 export default TokenRavineesh
+

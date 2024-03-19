@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Inbox  ()  {
+function Inbox  () {
     return(
 <>
 <section class="inbox" >
