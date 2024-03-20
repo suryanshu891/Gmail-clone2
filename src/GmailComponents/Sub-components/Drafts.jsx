@@ -1,6 +1,7 @@
 function Drafts  ()  {
     return(
-<>
+ <>
+{/* <h1>Driftd</h1> */}
 <section class="inbox" >
 <div class="inbox-menu">
 

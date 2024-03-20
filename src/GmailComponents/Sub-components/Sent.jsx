@@ -2,7 +2,8 @@
 function Sent(){
     return(
 <>
-<section class="inbox" >
+<h1>Sent mail</h1>
+{/* <section class="inbox" >
 <div class="inbox-menu">
 
 <div class="inbox-menu-group">
@@ -265,7 +266,7 @@ function Sent(){
 
         </div>
 
-    </section>
+    </section> */}
 </>
     );
 }

@@ -1,46 +1,66 @@
 //***************Gmail API***************
 
-// import './App.css';
-// import { Route, Routes } from 'react-router-dom';
-// import Header from './GmailComponents/header';
-// import Leftside from './GmailComponents/leftside';
-// import Footer from './GmailComponents/Footer';
-// import Rightside from './GmailComponents/rightside';
-// import Starred from './GmailComponents/Sub-components/Starred';
-// import Snoozed from './GmailComponents/Sub-components/Snoozed';
-// import Sent from './GmailComponents/Sub-components/Sent';
-// import Drafts from './GmailComponents/Sub-components/Drafts';
-// import Inbox from './GmailComponents/Sub-components/Inbox';
+import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import Header from './GmailComponents/header';
+import Leftside from './GmailComponents/leftside';
+
+import Rightside from './GmailComponents/rightside';
+import Starred from './GmailComponents/Sub-components/Starred';
+import Snoozed from './GmailComponents/Sub-components/Snoozed';
+import Sent from './GmailComponents/Sub-components/Sent';
+import Drafts from './GmailComponents/Sub-components/Drafts';
+import Inbox from './GmailComponents/Sub-components/Inbox';
+
+
+import TokenRavineesh from './Newtoken/TokenRavineesh';
+import Body from './GmailComponents/Body';
+
+function App() {
+  return (
+    <>
+      <div class="body-wrapper" >
+
+        <Header />
+        <Leftside />
+
+
+        <Routes>
+          <Route path="/" element={<Body params = ""/>}/>
+        <Route path="/Inbox" element={<Body params= "Inbox"/>} />
+        <Route path="/Starred" element={<Body params= "Starred"/>} />
+        <Route path="/Snoozed" element={<Body params= "Snoozed"/>} />
+        <Route path="/Sent" element={<Body params= "Sent"/>} />
+        <Route path="/Drafts" element={<Body params="Drafts"/>} />
+        </Routes>
+        {/* <Body/> */}
+        <Rightside/>
 
 
 
 
-// function App() {
-//   return (
-//     <>
-//       <div class="body-wrapper" >
 
-//         <Header />
-//         <Leftside />
-//       <Footer/>
-//       <Rightside/>
-//         <Routes>
-//         <Route path="/Inbox" element={<Inbox/>} />
-//         <Route path="/Starred" element={<Starred/>} />
-//         <Route path="/Snoozed" element={<Snoozed/>} />
-//         <Route path="/Sent" element={<Sent/>} />
-//         <Route path="/Drafts" element={<Drafts/>} />
-//         </Routes>
+      {/* <Route path="/" element={contact}/> */}
+        {/* <Routes>
+        <Route path="/Inbox" element={<Inbox/>} />
+        <Route path="/Starred" element={<Starred/>} />
+        <Route path="/Snoozed" element={<Snoozed/>} />
+        <Route path="/Sent" element={<Sent/>} />
+        <Route path="/Drafts" element={<Drafts/>} />
+        </Routes> */}
 
+        
+        
 
+        {/* <TokenRavineesh/> */}
+    
+      </div>
 
-//       </div>
+    </>
+  );
+}
 
-//     </>
-//   );
-// }
-
-// export default App;
+export default App;
 
 
 
@@ -70,17 +90,17 @@
 
 //********Accesstoken************
 
-import TokenRavineesh from './Newtoken/TokenRavineesh';
+// import TokenRavineesh from './Newtoken/TokenRavineesh';
 
-function App() {
-  return(
-    <>
-    <TokenRavineesh/>
+// function App() {
+//   return(
+//     <>
+//     <TokenRavineesh/>
     
-    </>
-  )
-}
-export default App;
+//     </>
+//   )
+// }
+// export default App;
 
 
 
