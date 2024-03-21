@@ -3,6 +3,8 @@ import Inbox from "./Sub-components/Inbox";
 import Sent from "./Sub-components/Sent";
 import Drafts from "./Sub-components/Drafts";
 import Starred from "./Sub-components/Starred";
+import Login from "./Login";
+
 
 function Body ({params}) {
   console.log(params)
@@ -16,7 +18,7 @@ function Body ({params}) {
           data=<Sent/>
           break;
           default:
-            data=<login/>
+            data=<Login/>
             break;
     }
     return data;
