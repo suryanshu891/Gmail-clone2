@@ -114,12 +114,6 @@ function Body ({params}) {
           {/* <Inbox/> */}
           
 
-       
-        
-
-
-
-       
 
         </div>
         <footer class="activity">
