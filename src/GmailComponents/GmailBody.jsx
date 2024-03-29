@@ -4,6 +4,7 @@ import Sent from "./Sub-components/Sent";
 import Drafts from "./Sub-components/Drafts";
 import Starred from "./Sub-components/Starred";
 import Login from "./Login";
+import Demo from "./Sub-components/Demo";
 
 
 function Body ({params}) {
@@ -17,6 +18,9 @@ function Body ({params}) {
         case 'Sent':
           data=<Sent/>
           break;
+          case 'Drafts':
+            data=<Drafts/>
+            break;  
           default:
             data=<Login/>
             break;

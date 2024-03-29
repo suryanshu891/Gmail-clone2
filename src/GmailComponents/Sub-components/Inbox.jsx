@@ -2,20 +2,21 @@
 import React, { useEffect, useState } from 'react'
 
 
+
 function Inbox() {
 
-  const [data, setData] = useState([])
-
+const [data,setData] = useState([])
 useEffect(() => {   
   const url = window.location.href
   const token = url.match(/access_token=([^&]+)/)
-  localStorage.setItem("Token",token && token[1])
+  if(token) {
+    localStorage.setItem("Token",token && token[1])
+  }
   getEmailData()
 }, [])
 const getEmailData = () => {
   let token = localStorage.getItem("Token")
-  console.log("hello", token)
-  let url = "https://gmail.googleapis.com/gmail/v1/users/me/messages"
+  let url = "https://gmail.googleapis.com/gmail/v1/users/me/messages?q=in:inbox"
   const options = {
       method : 'GET',
       headers : {
@@ -39,90 +40,99 @@ const options = {
   }
 }
 let mailData = []
- for (let message_id of id.slice(0,10)) {
-   let url =  `https://gmail.googleapis.com/gmail/v1/users/me/messages/${message_id.id}`
-   const responce = await fetch(url,options)
- const  message_data = await responce.json();
-   mailData.push(message_data)
-   console.log("message_data", message_data)
- }
+for (let message_id of id.slice(0,10)) {
+let url =  `https://gmail.googleapis.com/gmail/v1/users/me/messages/${message_id.id}`
+const responce = await fetch(url,options)
+const  message_data = await responce.json();
+mailData.push(message_data)
+console.log("message_data", message_data)
+}
 
- console.log("email data is", mailData)
- setData(mailData)
- }
+console.log("email data is", mailData)
+setData(mailData)
+}
+const convertToAMPM = (dateString) => {
+const date = new Date(dateString);
+return date.toLocaleTimeString('en-IN', { hour: 'numeric', minute: 'numeric', hour12: true });
+};
 
- return (
-  <div>
-    <div className="mail">
-      {data && data.map((value, index) => (
-       
-        <div className="inbox-message-item">
+  return(
+<>
+{console.log("static data is" , data)}
+<div class="content">
+ <div class="mail">
+ {data && data.map((Value) =>(<>              <div class="inbox-message-item">
+              <div class="checkbox"  >
+                <button class="btn">
+                  <img src="./icons/check_box_outline_blank_black_24dp.svg" alt="Select" class="btn-icon-sm btn-icon-alt btn-icon-hover message-btn-icon"/>
+                </button>
+              </div>
+              <div class="message-group-hidden">
+                <button class="btn-alt btn-nofill drag-indicator" >
+                  <img src="./icons/drag_indicator_black_24dp.svg" alt="Drag" class="btn-icon-sm btn-icon-alt btn-icon-disabled" />
+                </button>
+              </div>
 
-          <div className="checkbox">
-            <button className="btn">
-              <img src="./icons/check_box_outline_blank_black_24dp.svg" alt="Select" className="btn-icon-sm btn-icon-alt btn-icon-hover message-btn-icon" />
-            </button>
-          </div>
-
-          <div className="message-group-hidden">
-            <button className="btn-alt btn-nofill drag-indicator">
-              <img src="./icons/drag_indicator_black_24dp.svg" alt="Drag" className="btn-icon-sm btn-icon-alt btn-icon-disabled" />
-            </button>
-          </div>
-
-          <button className="btn star">
-            <img src="./icons/star_border_black_24dp.svg" alt="Not starred" className="btn-icon-sm btn-icon-alt btn-icon-hover message-btn-icon" />
-          </button>
-
-          <div className="message-default">
-
-            <div className="message-sender message-content unread">
-              <span>{value.payload.headers.find(item => item.name === "From").value}</span>
-            </div>
-
-            <div className="message-subject message-content unread">
-              <span>{value.payload.headers.find(item => item.name === "Subject").value}</span>
-            </div>
-
-            <div className="message-separator message-content"> - </div>
-
-            <div className="message-body message-content">
-              <span>{value.snippet}</span>
-            </div>
-
-            <div className="gap message-content">&nbsp;</div>
-
-            <div className="message-date center-text unread">
-              <span>{value.payload.headers.find(item => item.name === "Date").value}</span>
-            </div>
-
-          </div>
-
-          <div className="message-group-hidden">
-            <div className="inbox-message-item-options">
-              <button className="btn">
-                <img src="./icons/archive_black_24dp.svg" alt="Archive" className="btn-icon-sm btn-icon-alt btn-icon-hover" />
+              <button class="btn star" >
+                <img src="./icons/star_border_black_24dp.svg" alt="Not starred" class="btn-icon-sm btn-icon-alt btn-icon-hover message-btn-icon"/>
               </button>
 
-              <button className="btn">
-                <img src="./icons/delete_black_24dp.svg" alt="Delete" className="btn-icon-sm btn-icon-alt btn-icon-hover" />
-              </button>
+              <div class="message-default" >
 
-              <button className="btn">
-                <img src="./icons/mark_as_unread_black_24dp.svg" alt="Mark as unread" className="btn-icon-sm btn-icon-alt btn-icon-hover" />
-              </button>
+                <div class="message-sender message-content unread" >
+                  <span >{Value.payload.headers.find(item=>item.name == "From").value}</span>
+                </div>
+    
+                <div class="message-subject message-content unread">
+                  <span>{Value.payload.headers.find(item=>item.name == "Subject").value}</span>
+                </div>
 
-              <button className="btn">
-                <img src="./icons/access_time_filled_black_24dp.svg" alt="Snooze" className="btn-icon-sm btn-icon-alt btn-icon-hover" />
-              </button>
-            </div>
-          </div>
+                <div class="message-seperator message-content"> - </div>
+
+                <div class="message-body message-content">
+                  <span>{Value.snippet}</span>
+                </div>
+                
+                <div class="gap message-content" > &nbsp; </div>
+
+                <div class="message-date center-text unread" > 
+                  <span>{convertToAMPM(Value.payload.headers.find(item=>item.name == "Date").value)}</span>
+                </div>
+
+              </div>
+
+              <div class="message-group-hidden" >
+                <div class="inbox-message-item-options">
+                  <button class="btn">
+                    <img src="./icons/archive_black_24dp.svg" alt="Archive" class="btn-icon-sm btn-icon-alt btn-icon-hover"/>
+                  </button>
+    
+                  <button class="btn">
+                    <img src="./icons/delete_black_24dp.svg" alt="Delete" class="btn-icon-sm btn-icon-alt btn-icon-hover"/>
+                  </button>
+    
+                  <button class="btn">
+                    <img src="./icons/mark_as_unread_black_24dp.svg" alt="Mark as unread" class="btn-icon-sm btn-icon-alt btn-icon-hover"/>
+                  </button>
+    
+                  <button class="btn">
+                    <img src="./icons/access_time_filled_black_24dp.svg" alt="Snooze" class="btn-icon-sm btn-icon-alt btn-icon-hover"/>
+                  </button>
+                </div>
+              </div>
+
+            </div></>))}      
 
         </div>
-      ))}
-    </div>
-  </div>
-);
+
+
+
+
+
+
+      </div>
+</>
+  );
 
 }
 

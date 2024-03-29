@@ -14,7 +14,7 @@ import Inbox from './GmailComponents/Sub-components/Inbox';
 
 
 import TokenRavineesh from './Newtoken/TokenRavineesh';
-import Body from './GmailComponents/Body';
+import GmailBody from './GmailComponents/GmailBody';
 
 function App() {
   return (
@@ -26,14 +26,14 @@ function App() {
 
 
         <Routes>
-          <Route path="/" element={<Body params = ""/>}/>
-        <Route path="/Inbox" element={<Body params= "Inbox"/>} />
-        <Route path="/Starred" element={<Body params= "Starred"/>} />
-        <Route path="/Snoozed" element={<Body params= "Snoozed"/>} />
-        <Route path="/Sent" element={<Body params= "Sent"/>} />
-        <Route path="/Drafts" element={<Body params="Drafts"/>} />
+          <Route path="/" element={<GmailBody params = ""/>}/>
+        <Route path="/Inbox" element={<GmailBody params= "Inbox"/>} />
+        {/* <Route path="/Starred" element={<Body params= "Starred"/>} />
+        <Route path="/Snoozed" element={<Body params= "Snoozed"/>} /> */}
+        <Route path="/Sent" element={<GmailBody params= "Sent"/>} />
+        <Route path="/Drafts" element={<GmailBody params="Drafts"/>} />
         </Routes>
-        {/* <Body/> */}
+        {/* <GmailBody/> */}
         <Rightside/>
 
 
