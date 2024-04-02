@@ -13,6 +13,7 @@ import Drafts from './GmailComponents/Sub-components/Drafts';
 import Inbox from './GmailComponents/Sub-components/Inbox';
 
 
+
 import TokenRavineesh from './Newtoken/TokenRavineesh';
 import GmailBody from './GmailComponents/GmailBody';
 
@@ -66,24 +67,52 @@ export default App;
 
 
 
-// //*****UseRef1*******
+// //*****Google Login page*******
 
-// import Ref1 from './UseRef/Ref1';
+// import React from 'react';
+// import Loginhtml from './Loginpage/Loginhtml';
 
 // function App() {
 //   return (
 //     <>
-//       
-//       {/* <Ref1/> */}
-
-
-      
+     
+//       <Loginhtml />
 //     </>
-    
 //   );
 // }
 
-// export default App; 
+// export default App;
+
+
+
+
+
+
+
+
+
+
+
+// //*****UseRef1*******
+
+// import React from 'react';
+// import Ref1 from './UseRef/Ref1';
+// function App() {
+//   return (
+//     <>
+//       {/* <Ref1/> */}
+     
+//     </>
+//   );
+// }
+
+// export default App;
+
+
+
+
+
+
 
 
 
@@ -101,6 +130,10 @@ export default App;
 //   )
 // }
 // export default App;
+
+
+
+
 
 
 

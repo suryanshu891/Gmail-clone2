@@ -3,12 +3,9 @@ import { useState } from "react";
 export default function Login() {
     const [accesstoken, setAccesstoken] = useState('')
     const handlelogin = () => {
-        // console.log("handle login clicked")
         const CLIENT_ID = "105564751172-ubv3r7o0g0q2fh3tmndr9mvfe8p1ct91.apps.googleusercontent.com";
         const REDIRECT_URL = "http://localhost:3000/inbox";
-        // const SCOPE = "http://www.googleapis.com/auth/gmail.readonly"; //this line
-        //  show error
-        const SCOPE = "https://www.googleapis.com/auth/gmail.readonly ";
+        const SCOPE = "https://www.googleapis.com/auth/gmail.readonly  https://www.googleapis.com/auth/gmail.send";
         const AUTH_URL = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URL}&scope=${SCOPE}&response_type=token`;
         window.location.href = AUTH_URL
     }
