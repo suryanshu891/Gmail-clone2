@@ -13,8 +13,8 @@ function Body ({params}) {
     let data ;
     switch(Component){
       case 'Inbox':
-        // data=<Inbox/>
-        data=<Demo/>
+        data=<Inbox/>
+        // data=<Demo/>
         break;
         case 'Sent':
           data=<Sent/>
