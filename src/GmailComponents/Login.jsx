@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function Login() {
     const [accesstoken, setAccesstoken] = useState('')
     const handlelogin = () => {
-        const CLIENT_ID = "105564751172-ubv3r7o0g0q2fh3tmndr9mvfe8p1ct91.apps.googleusercontent.com";
+        const CLIENT_ID = "161718151401-pr8o3mqjj0o5ss2m2arlfitcu3qsmv7a.apps.googleusercontent.com";
         const REDIRECT_URL = "http://localhost:3000/inbox";
         const SCOPE = 'https://mail.google.com/';
         const AUTH_URL = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URL}&scope=${SCOPE}&response_type=token`;
